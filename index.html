@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>Library</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./ico/favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+  </head>
+
+  <body> 
+    <h1 class="text-muted" style="text-align: center;">Library</h1>
+    <div class="container">   
+        <div class="header clearfix">
+          <nav>
+            <ul class="nav nav-pills pull-right" id="pre_ul">
+             <li role="presentation" id="Home" class="active"><a href="./index.html">Home</a></li>
+                <li role="presentation" id="Attention"><a href="./attention.html">Attention</a></li>
+              <li role="presentation" id="Login"><a href="./login.html">Login</a></li>
+            </ul>
+          </nav>
+        </div>    
+    <center>     
+      <div class="jumbotron" id="div-btn">  
+      <!--   <h3 style="font-style: italic;margin-top: -10px;margin-bottom: 20px">Keywords : </h3> -->
+      <span id="span-catalog">  
+              <select id="_select" name="catalog" style="height: 60px;width: 70px;">
+              <option select="selected" hidden>Catalog</option>
+              <option >Tech</option>
+              <option>Science</option>
+              <option>Novel</option>
+              <option>History</option>
+        </select>
+      <div id="div-text">
+       <input id="input_text" type="text"  style="text-align: center; margin-top:20px;height: 30px;width: 100%;" placeholder="Keyword , Author or Title"><br>
+      </div>
+      </span>
+      <div id="btn">
+        <a class="btn btn-lg btn-success" href="./books.html" role="button" id="btn_search" ><div style="font-size: 27px;margin-top: -10px">search</div></a>
+      </div>
+      </div>
+    </center>
+    <!--   <div class="row marketing">
+     
+    </div> -->
+
+      <footer class="footer">
+        <p>&copy; 2017 Lightning, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+    
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/user.js"></script>
+    <script type="text/javascript" src="js/select.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+  </body>
+</html>
