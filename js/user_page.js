@@ -12,7 +12,9 @@ $('#back_btn').click(function(){
 			$('#content').append($bookList_head);
 
 			if(borrowed_books.length==0){
-				$('#content').append("<h1 style=\"text-align:center;\">None</h1><br/>");	
+				$('#content').append("<h1 style=\"text-align:center;font-style:italic;\">None</h1>");
+				$('#content').append("<center><img src=\"img/sad.jpg\"></center>");
+				$('#content').append("<h2 style=\"text-align:center;\">Go to the <a style=\"color:orange;\" href=\"books.html\">library</a> to borrow some books !</h2><br>");	
 				
 			}
 
@@ -106,5 +108,6 @@ $('#back_btn').click(function(){
 		}
 		else{
 			
-			$('#content').append("<h1 class=\"text-danger\" style=\"text-align:center;\">Hello, please Login First&nbsp;!</h1><br/>");
+			$('#content').append("<h1 class=\"text-danger\" style=\"text-align:center;\">Hi , please <a href=\"login.html\">Login</a> First&nbsp;!</h1><br/>");
+			$('#content').append("<center><img src=\"img/angry.png\"></center>");
 		}
