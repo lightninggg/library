@@ -23,8 +23,8 @@ book[2] = {
 
 book[3] = {
 	catalog: "History",
-	author: "Song",
-	title: "Chinese History",
+	author: "Robert Tombs",
+	title: "The English and Their History ",
 	number: 2
 };
 
@@ -37,7 +37,7 @@ book[4] = {
 
 book[5] = {
 	catalog: "History",
-	author: "Song",
+	author: "Jane",
 	title: "The World History",
 	number: 2
 };
@@ -60,8 +60,30 @@ book[8] = {
 	title: "A Brief History of Time",
 	number: 2
 };
-
-
+book[9]={
+	catalog: "History",
+	author: "Mary Beard",
+	title: "A History of Ancient Rome",
+	number: 1
+}
+book[10]={
+	catalog: "History",
+	author: "Rachel Swaby",
+	title: "Women Who Changed Science and the World",
+	number: 1
+}
+book[11]={
+	catalog: "History",
+	author: "Lincoln Paine",
+	title: "The Sea and Civilisation: A Maritime History of the World",
+	number: 1
+}
+book[12]={
+	catalog: "Novel",
+	author: "Luff",
+	title: "One Piece",
+	number: 1
+}
 	var books = [];	
 	for(var i=0;i<book.length;i++)
 		books.push(book[i]);
