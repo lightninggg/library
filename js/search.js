@@ -23,6 +23,13 @@ $('#btn_search').click(function(){
 		}
 	}
 
+	for(var j=0;j<required_catalog_books.length;j++)
+	{
+		if(required_catalog_books[j].author.indexOf(required_message)>=0){
+			required_books.push(required_catalog_books[j]);
+		}
+	}
+
 	localStorage.setItem('required_books',JSON.stringify(required_books));
 })
 	
