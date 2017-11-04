@@ -4,16 +4,28 @@
 	<meta charset="UTF-8">
 	<title>Login</title>
 	<link rel="icon" href="./ico/favicon2.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 	<style type="text/css">
 		h1{
 			text-align: center;
 		}
+		#submit{
+			margin:auto;
+			width: 200px
+		}
 		#login_div{
 			text-align: center;
-			margin-top: 40px;
 			font-size: 20px;
+		}
+		input{
+			max-width: 200px;
+			margin:auto;
+		}
+		.glyphicon-list-alt {
+			font-size: 10rem;
+			/*margin-top: 3rem;*/
+			color: #f96145;
 		}
 	</style>
 </head>
@@ -35,21 +47,18 @@
 
 			<div class="main">		
 				<div id="login_div">
+					<span class="glyphicon glyphicon-list-alt"></span>
 					<form>
-						Username: <input type="text" name="username" id="flag"><br><br>
-						Password: &nbsp;<input type="password" name="password" id="pasw">
+						<div>
+							<label>Username: </label><input type="text"  class="form-control" name="username" id="flag" placeholder="Username"><br>
+							<label>Password: &nbsp;</label><input type="password" class="form-control" name="password" id="pasw" placeholder="Password">
+						</div>
 						<br>
-						<br>
-						<br>
-						<button class="btn-primary" style="background-color: orange;color: black;" id="submit">Sign in</button>
+						<button class="btn btn-lg btn-primary btn-block" id="submit">Sign in</button>
 					</form>
 						<br>
+						<button class="btn-link" style="font-style: italic;"><a href="./signup.html">Need an account ?</a></button>
 						<br>
-						<br>
-						<h3 style="font-style: italic;">Don't have an account ?</h3>
-						<br>
-						
-						<button class="btn-primary" style="background-color:green;"><a href="./signup.html" style="color: white;text-decoration: none;">Sign up</a></button>
 				</div>
 			</div>
 			<div id="before_welcome">
@@ -60,10 +69,9 @@
 				<h2>&nbsp;&nbsp;Welcome to this library!</h2>
 				<h2>&nbsp;&nbsp;Wish U enjoy this journey!</h2>
 				<img src="img/run.gif">
-	
 		</div>
 		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	    <script type="text/javascript" src ="js/login_welcome.js"></script>
 	    <script type="text/javascript" src="js/user.js"></script>
 	    <script type="text/javascript" src="js/login.js"></script>

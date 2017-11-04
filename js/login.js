@@ -17,7 +17,7 @@ var f = {
 				}
 			var flag = JSON.parse(localStorage.getItem('flag'));
 			var users = JSON.parse(localStorage.getItem('users'));
-					for(var i=0;i<users.length;i++)
+				for(var i=0;i<users.length;i++)
 				{	
 		    		//check
 		    	
@@ -28,7 +28,7 @@ var f = {
 									}
 				}
 				if(flag[0].user_flag == 0 ){
-											alert("Please sign in correctly !!");
+										alert("Please sign in correctly !!");
 						}
 				localStorage.setItem('flag',JSON.stringify(flag));
 				})

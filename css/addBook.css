@@ -1,0 +1,52 @@
+body{
+  font-family: arial, sans-serif;
+}
+*{
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+}
+#maindiv{
+  width: 100%;
+  height: 666px;
+}
+#navdiv h1{
+  width: 200px;
+  float: left;
+  margin-left: 15px;
+}
+#insertdata input, select{
+  width: 50%;
+  align-items: center;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+#insertdata select option{
+  font-size: 14px;
+  height: 30%;
+  box-sizing: border-box;
+}
+ #insertdata button{
+/*  background-color: #4CAF50;
+  font-size: 12px;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;*/
+  cursor: pointer;
+  width: 66%;
+}
+/*#insertdata button:hover {
+    opacity: 0.8;
+} */
+#insertdata{
+  align-items: center;
+  margin-left: 25%;
+  margin-right: 10%;
+}
+/*#View{
+  display: block;
+}*/

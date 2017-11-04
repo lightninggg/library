@@ -1,7 +1,6 @@
-window.onload=function(){
- 	
 	 var users = JSON.parse(localStorage.getItem('users'));
 	 var flag = JSON.parse(localStorage.getItem('flag'));	           
+window.onload=function(){	
 	      if(flag[0].user_flag)
 	      {         
 	          $('.main').hide();
@@ -11,4 +10,4 @@ window.onload=function(){
 	          $('#hello_head').text("Hello , ");
 	          $('#hello_head').append("<b><a href=\"user.html\">"+users[flag[0].user_cnt].name+"</a>"+"</b>");
 	        }
- }
+ };

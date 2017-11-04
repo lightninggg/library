@@ -1,4 +1,4 @@
-$('body').prepend('<div id="left_login"> <p style="font-size: 20px;">&nbsp;&nbsp;Hello,&nbsp;&nbsp;please&nbsp;&nbsp;<a href="./login.html">Login</a></p></div><div id="left_logout" style="display: none;"><p style="font-size: 20px;"><span id="hello">&nbsp;&nbsp;Hello,&nbsp;&nbsp;</span>&nbsp;&nbsp;<a href="" id="logout">Logout</a></p></div>');	
+$('body').prepend('<div id="left_login" style=\"width:400px;\"> <p style="font-size: 20px;">&nbsp;&nbsp;Hello,&nbsp;&nbsp;please&nbsp;&nbsp;<a href="./login.html">Login&nbsp;<span class=\"glyphicon glyphicon-log-in\"></span></a></p></div><div id="left_logout" style="display: none;"><p style="font-size: 20px;"><span id="hello">&nbsp;&nbsp;Hello,&nbsp;&nbsp;</span>&nbsp;&nbsp;<a href="" id="logout">Logout&nbsp;<span class=\"glyphicon glyphicon-log-out\"></span></a></p></div>');	
   var flag = JSON.parse(localStorage.getItem('flag'));
           $('#logout').click(function(){
               flag[0].user_flag = 0;

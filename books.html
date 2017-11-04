@@ -4,39 +4,111 @@
 	<meta charset="UTF-8">
 	<title>Book</title>
 	<style type="text/css">
-		#t-head{
-			font-size: 40px;
-			font-style: italic;
+		.book_name_href{
+			text-decoration:none!important;
+			font-size: 22px;
+		}
+		.book_name_href:hover{
+			color: red;
+		}
+		#act_on_books{
+			background-color: #e5e5e5;
+			font-size: 20px;
+			float: left;
+			position: fixed;
+			margin-top: 30px;
+		}
+		#admin_table-content{
+			margin-top: 10px;
+			width: 1100px!important;
+			text-align: center;
+			font-size: 23px;
+		}
+		#reader_table-content{
+			margin-left: 20px;
+		}
+		#book_inf_container{
+			background-color: #9fEfff;
+			margin: auto;
+			width: 400px;
+			border-radius: 1.5em;
+		}
+		.admin_tr_th td{
+			font-size: 30px;
+			height: 100px;
 			font-variant: small-caps;
+			font-style: italic;
+		}
+		.admin_tr td{
+			height: 120px;
+		}
+		.glyphicon-book{
+			font-size: 6rem;
+		}
+		input{
+			max-width: 100px;
 		}
 		table{
-			margin-top: 30px;
-			font-size: 25px;
 			border:solid;
-			text-align: center;
+			width: 800px!important;
+			margin-left:230px;
+			margin-top: 90px;
+			font-size: 16px;
 		} 
 		
 		td{
-			width: 300px;
-			text-align: center;
+			width: 300px!important;
+			height: 50px;
 			vertical-align: middle!important;
 			word-break:break-all;  
 		}
 	</style>
-	 <link rel="icon" href="./ico/favicon.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="icon" href="./ico/favicon.ico">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/dist/bootstrap-directional-buttons.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<h1 class="text-muted" style="text-align: center;color: blue;font-size: 70px;font-style: italic;">Book</h1>
+	<h1 class="text-info book_h" style="text-align: center;font-size: 70px;font-style: italic;"><b>Book</b></h1>
 	<div class="header clearfix"></div>
-	<a style="text-decoration:none;display: inline;" href="index.html"><button class="btn-info" style="margin-left: 2%;width:150px;height: 60px;text-align: center;font-size: 40px;">Home</button></a>
-	<a style="text-decoration:none;float: right;margin-right:2%;display: block;" href="user.html"><button class="btn-info" style=" width:150px;height: 60px;text-align: center;font-size: 40px;">User</button></a>
-	
-	<div id="container"></div>
+	<!-- style="margin-left: 2%;width:150px;height: 60px;text-align: center;font-size: 40px;
+		 -->
+		 <center>
+			<a style="text-decoration:none;display: inline;margin-left:2%;float: left;" href="index.html"><button class="btn btn-lg btn-success btn-arrow-left" style="margin-left: 30px;">Home</button></a>
+			<a id="add_newBook" style="text-decoration:none;display: none;" href="addBook.html"><button class="btn btn-lg btn-success">Add new book</button></a>
+			<a style="text-decoration:none;float: right;margin-right:2%;display: inline;" href="user.html"><button class="btn btn-lg btn-success btn-arrow-right" style="margin-right: 30px;">User</button></a>	
+		</center>	
+	<!-- width:150px;height: 60px;text-align: center;font-size: 40px; -->
+	<div id="book_inf" style="display: none;"></div>
+	<div id="container">
+		<div id="act_on_books">
+			<p style="text-align: center;font-style: italic;"><b>Options</b></p>
+			<ul>
+				<li class="btn-link" id="list_all_books">
+					List all the books
+				</li>
+				<li class="btn-link" id="chinese_books">
+					Chinese books
+				</li>
+				<li class="btn-link" id="english_books">
+					English books
+				</li>
+			</ul>
+				------------------------------
+				<br>
+			<ul>
+				<li class="btn-link" id="sort_name">
+					Sort by name
+				</li>
+				<li class="btn-link" id="sort_issue_date">
+					Sort by issue date
+				</li>
+			</ul>
+		</div>
+	</div>
 	
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/user.js"></script>
 	<script type="text/javascript" src="js/search_result.js"></script>
 	<script type="text/javascript" src="js/borrow.js"></script>

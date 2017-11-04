@@ -5,14 +5,19 @@
 	<title>User Center</title>
 
 	<link rel="icon" href="./ico/favicon.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
     <style type="text/css">
 		#t-head{
 			font-size: 40px;
 			font-style: italic;
 			font-variant: small-caps;
+		}
+		.admin_ul{
+			list-style-position: inside;
+			font-style: italic;
+			padding-left: 40%;
+			font-size: 40px;
 		}
 		 table{
 			margin-top: 30px;
@@ -20,16 +25,42 @@
 			border:solid;
 			text-align: center;
 		} 
-
 	</style>
+	<link rel="stylesheet" type="text/css" href="css/user_page_style.css">
 </head>
 <body>	
+			<div class="navbar navbar-default navbar-fixed-top">
+				  <div class="nav_content">
+				   <div class="navbar-header">
+				     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				       <span class="icon-bar"></span>
+				       <span class="icon-bar"></span>
+				       <span class="icon-bar"></span> 
+				     </button> 
+				   </div>
+				   <div class="collapse navbar-collapse" id="myNavbar">
+				     <ul class="nav navbar-nav navbar-right">
+				        <li><a href="index.html">Home</a></li>
+				        <li><a href="attention.html">Attention</a></li>
+				        <li><a href="books.html">Library</a></li>
+				        <li><a id="nav_login" href="login.html" style="color:#3067E5!important;">Login</a></li>
+				        <li><a id="nav_logout" href="#" style="display: none;float: right;color:#3067E5!important;">Logout</a></li>
+				      </ul>
+				    </div>
+				  </div>
+				</div>
 	<div id="head"></div>
 	<div class="header clearfix"></div>
-	<div id="content"></div>
-	<div id="div_back" style="text-align: center;"><button id="back_btn" class="btn-primary" style=" width:150px;height: 60px;text-align: center;font-size: 40px;">Back</button></div>
+	
+
+	<div id="content">			
+	</div>
+
+	<div id="div_back" style="text-align: center;"><button id="back_btn" class="btn-primary btn-lg">Back</button></div>
+	<!-- // style=" width:150px;height: 60px;text-align: center;font-size: 40px;" -->
+
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/user.js"></script>
  	<script type="text/javascript" src="js/user_head.js"></script>
  	<script type="text/javascript" src="js/user_page.js"></script>

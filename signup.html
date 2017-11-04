@@ -16,6 +16,10 @@
 			margin-top: 40px;
 			font-size: 20px;
 		}
+		input{
+			max-width: 200px;
+			margin:auto;
+		}
 	</style>
 
 	<body>
@@ -26,15 +30,11 @@
 				</div>
 					<form id = "sign_form" action="./login.html">
 					<br>
-					<span style="margin-left: 22px;">ID :</span><input type="text" name="ID" id ="id" style="margin-left: 50px;">
+					<label>ID :</label><input type="text" class="form-control" name="ID" id ="id" ><br>
+					<label>Username:</label><input type="text" class="form-control" name="username" id="user"><br>
+					<label>Password: &nbsp;</label><input type="password" class="form-control" name="password" id="pasw">	
 					<br>
-					<br>
-					Username: <input type="text" name="username" id="user"><br><br>
-					Password: &nbsp;<input type="password" name="password" id="pasw">	
-					<br>
-					<br>
-					<br>
-					<input id="signup" class="btn-primary" type="submit" name="submit" value="submit">		
+					<input id="signup" class="btn-primary btn-block btn-lg" type="submit" name="submit" value="Submit">		
 			</form>
 			</div>
 		</div>
