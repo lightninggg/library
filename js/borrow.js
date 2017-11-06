@@ -3,6 +3,11 @@ var users = JSON.parse(localStorage.getItem('users'));
 var flag = JSON.parse(localStorage.getItem('flag'));
 var required_books = JSON.parse(localStorage.getItem('required_books'));
 var current_user = users[flag[0].user_cnt];
+if(localStorage.getItem('deleted_books') == null){
+	var deleted_books = [];
+	localStorage.setItem('deleted_books',JSON.stringify(deleted_books));
+}
+var deleted_books = JSON.parse(localStorage.getItem('deleted_books'));
 /*$('.btn-primary').click(function(){
 
 	if(flag[0].user_flag){
@@ -129,10 +134,12 @@ $('.admin_edit').click(function(){
 				books[change_book_index].title = input_value[0];
 				books[change_book_index].catalog = input_value[1];
 				books[change_book_index].author = input_value[2];
+				books[change_book_index].number = input_value[3];
 
 				required_books[required_change_book_index].title = input_value[0]; 
 				required_books[required_change_book_index].catalog = input_value[1];
 				required_books[required_change_book_index].author = input_value[2];
+				required_books[required_change_book_index].number = input_value[3];
 
 				td_index = -1;
 				$(this).parent().siblings().each(function(){
@@ -211,10 +218,11 @@ $('.admin_delete').click(function(){
 				required_delete_target_index = i;
 			}
 		}
+		deleted_books.push(required_books[required_delete_target_index]);
 		required_books.splice(required_delete_target_index,1);
-		
 		localStorage.setItem('books',JSON.stringify(books));
 		localStorage.setItem('required_books',JSON.stringify(required_books));
+		localStorage.setItem('deleted_books',JSON.stringify(deleted_books));
 		location.reload();
 		
 	}

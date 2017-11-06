@@ -26,10 +26,48 @@ var user_idetity_admin = !flag[0].user_cnt;
 		location.reload();
 	});
 	$('#sort_issue_date').click(function() {
-		required_books.sort(compare('issue_date'));
+		required_books.sort(compare('issueDate'));
 		localStorage.setItem('required_books',JSON.stringify(required_books));
 		location.reload();
 	});
+	$('#chinese_books').click(function(){
+			var c_array = new Array();
+			var pattern = new RegExp("[\u4E00-\u9FA5]+");
+			for(let i=0;i<required_books.length;i++){
+				if(pattern.test(required_books[i].title)){
+					c_array.push(required_books[i]);
+				}
+			}
+			localStorage.setItem('required_books',JSON.stringify(c_array));
+			location.reload();
+		});
+	$('#english_books').click(function(){
+			var c_array = new Array();
+			var pattern = new RegExp("[\u4E00-\u9FA5]+");
+			for(let i=0;i<required_books.length;i++){
+				if(pattern.test(required_books[i].title)){;}
+					else{	
+						c_array.push(required_books[i]);
+					}
+
+			}
+			localStorage.setItem('required_books',JSON.stringify(c_array));
+			location.reload();			
+		});
+	$('.catalog').click(function(){
+		var required_catalog = $(this).attr('id');
+		var c_array = new Array();
+		for(var i=0;i<books.length;i++)
+		{
+			if(books[i].catalog == required_catalog){
+				c_array.push(books[i]);
+			}
+		}
+
+		localStorage.setItem('required_books',JSON.stringify(c_array));
+			location.reload();			
+	})
+
 	if(!user_idetity_admin){
 			if(required_books == null){
 
@@ -39,20 +77,25 @@ var user_idetity_admin = !flag[0].user_cnt;
 				required_books = [];
 				for(var i=0;i<books.length;i++){
 					required_books.push(books[i]);
-					$('#tbody-content').append(	"<tr>"+"<td style=\"width:1px!important;\">"+(i+1)+"."+
-						"</td>"+
+					$('#tbody-content').append("<tr>"+"<td style=\"width:1px!important;\">"+(i+1)+"."+
+						"<span class=\"glyphicon glyphicon-book\"></span>"+"</td>"+
 						"<td>"+
-							"<a class=\"book_name_href\" href=\"#\">"+books[i].title+
-						"</a>"+"<br>"+"<b>"+"catalog"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+books[i].catalog+
-						"<br>"+
-						"<b>"+"author"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
-						books[i].author+"<br>"+
-						"<b>"+"ISBN"+"</b>"+"<br>"+
-						"<b>"+"Issue date"+"</b>"+"<br>"+
-						"<b>"+"number"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
-						books[i].number+"<br>"+
-						"<button class=\"btn-primary reader\" style=\"font-style:italic;\">Borrow</button>"+"</td>"+
-						"</tr>");
+						"<a class=\"book_name_href\" href=\"#\">"+books[i].title+
+					"</a>"+"<br>"+"<b>"+"Catalog"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					books[i].catalog+
+					"<br>"+
+					"<b>"+"Author"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					books[i].author+"<br>"+
+					"<b>"+"ISBN"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					books[i].ISBN+"<br>"+
+					"<b>"+"Issue date"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+
+					books[i].issueDate+"<br>"+
+					"<b>"+"Publisher"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					books[i].publisher+"<br>"+
+					"<b>"+"Number"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					books[i].number+"<br>"+
+					"<button class=\"btn-primary reader\" style=\"font-style:italic;\">Borrow</button>"+"</td>"+
+					"</tr>");
 						
 					}
 					localStorage.setItem('required_books',JSON.stringify(required_books));
@@ -66,13 +109,18 @@ var user_idetity_admin = !flag[0].user_cnt;
 						"<span class=\"glyphicon glyphicon-book\"></span>"+"</td>"+
 						"<td>"+
 						"<a class=\"book_name_href\" href=\"#\">"+required_books[i].title+
-					"</a>"+"<br>"+"<b>"+"catalog"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+required_books[i].catalog+
+					"</a>"+"<br>"+"<b>"+"Catalog"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					required_books[i].catalog+
 					"<br>"+
-					"<b>"+"author"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					"<b>"+"Author"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
 					required_books[i].author+"<br>"+
-					"<b>"+"ISBN"+"</b>"+"<br>"+
-					"<b>"+"Issue date"+"</b>"+"<br>"+
-					"<b>"+"number"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					"<b>"+"ISBN"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					required_books[i].ISBN+"<br>"+
+					"<b>"+"Issue date"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;"+
+					required_books[i].issueDate+"<br>"+
+					"<b>"+"Publisher"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+					required_books[i].publisher+"<br>"+
+					"<b>"+"Number"+"</b>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
 					required_books[i].number+"<br>"+
 					"<button class=\"btn-primary reader\" style=\"font-style:italic;\">Borrow</button>"+"</td>"+
 					"</tr>");
@@ -126,12 +174,14 @@ var user_idetity_admin = !flag[0].user_cnt;
 		$('#container').hide();
 		$button = $('<center><button class=\"btn-primary btn-lg back_btn\">back</button></center>');
 		$("#book_inf").show();
-		$("#book_inf").append("<br><br><br>");
 		$("#book_inf").append("<div id=\"book_inf_container\"></div>");
 		$("#book_inf_container").append("<br>");
-		$("#book_inf_container").append("<h2 style=\"text-align:center;\">"+"<b>"+"Author: "+"</b>"+current_book.author+"</h3>");
-		$("#book_inf_container").append("<h2 style=\"text-align:center;\">"+"<b>"+"Catalog: "+"</b>"+current_book.catalog+"</h3>");
-		$("#book_inf_container").append("<h2 style=\"text-align:center;\">"+"<b>"+"Number of copies: "+"</b>"+current_book.number+"</h3>");
+		$("#book_inf_container").append("<h2 style=\"margin-left:4px;\">"+"<b>"+"Author: "+"</b>"+current_book.author+"</h3>");
+		$("#book_inf_container").append("<h2 style=\"margin-left:4px;\">"+"<b>"+"Catalog: "+"</b>"+current_book.catalog+"</h3>");
+		$("#book_inf_container").append("<h2 style=\"margin-left:4px;\">"+"<b>"+"Issue date: "+"</b>"+current_book.issueDate+"</h3>");
+		$("#book_inf_container").append("<h2 style=\"margin-left:4px;\">"+"<b>"+"ISBN: "+"</b>"+current_book.ISBN+"</h3>");
+		$("#book_inf_container").append("<h2 style=\"margin-left:4px;\">"+"<b>"+"Publisher: "+"</b>"+current_book.publisher+"</h3>");
+		$("#book_inf_container").append("<h2 style=\"margin-left:4px;\">"+"<b>"+"Number of copies: "+"</b>"+current_book.number+"</h3>");
 		$("#book_inf_container").append("<br>");
 		$("#book_inf_container").append($button);
 		$("#book_inf_container").append("<br>");

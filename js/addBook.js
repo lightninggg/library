@@ -3,7 +3,7 @@ $('#back_button').click(function(){
 })
 $('#save_button').click(function(){
 	var books = JSON.parse(localStorage.getItem('books'));
-	if($('#bookname').val() == ""||$('#authorname').val()== ""||$('#ISBN').val()== ""||$('#issuedate').val()== ""||($('#num').val()<=0)){
+	if($('#bookname').val() == ""||$('#authorname').val()== ""||$('#ISBN').val()== ""||$('#issuedate').val()== ""||($('#num').val()<=0||$('#publisher').val()== "")){
 		alert("Please add this book correctly !!");
 		return false;
 	}
@@ -14,6 +14,9 @@ $('#save_button').click(function(){
 		new_book.catalog = $('#catalog').val();
 		new_book.author = $('#authorname').val();
 		new_book.number = $('#num').val();
+		new_book.ISBN = $('#ISBN').val();
+		new_book.publisher = $('#publisher').val();
+		new_book.issueDate = $('#issuedate').val();
 		books.push(new_book);
 		localStorage.setItem('books',JSON.stringify(books));
 		window.history.go(-1);
