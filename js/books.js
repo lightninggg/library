@@ -304,7 +304,7 @@ book[32]={
 	number: 3
 }
 book[33]={
-	catalog: "history",
+	catalog: "History",
 	author: "陈少英",
 	ISBN:"978-7-5197-0376-9",
 	title: "论中华上下五千年",
@@ -330,6 +330,191 @@ book[35]={
 	issueDate:"2011",
 	number: 3
 }
+book[36]={
+	catalog: "Novel",
+	author: "加西亚·马尔克斯",
+	ISBN:"978-7-101-11630-9",
+	title: "百年孤独",
+	publisher:"南海出版公司",
+	issueDate:"1984",
+	number: 5
+}
+book[37]={
+	catalog: "Novel",
+	author: "Jane Austen",
+	ISBN:"978-7-101-12630-8",
+	title: "Pride and Prejudice",
+	publisher:"译林出版社",
+	issueDate:"2012",
+	number: 7
+}
+book[38]={
+	catalog: "Novel",
+	author: "Joseph Devlin",
+	ISBN:"978-7-123-11830-8",
+	title: "How to Speak and Write Correctly",
+	publisher:"Arc Manor",
+	issueDate:"2007",
+	number: 8
+}
+book[39]={
+	catalog: "Novel",
+	author: "Jane Austen",
+	ISBN:"978-6-101-19830-8",
+	title: "理智与情感",
+	publisher:"译林出版社",
+	issueDate:"2004",
+	number: 2
+}
+book[40]={
+	catalog: "Novel",
+	author: "Arthur Conan Doyle",
+	ISBN:"978-6-101-19520-8",
+	title: "The Lost World",
+	publisher:"东华大学出版社",
+	issueDate:"2017",
+	number: 1
+}
+book[41]={
+	catalog: "Novel",
+	author: "F·S·菲茨杰拉德",
+	ISBN:"978-6-101-19811-8",
+	title: "THE GREAT GATSBY",
+	publisher:"Wordsworth Editions Limited",
+	issueDate:"1993",
+	number: 7
+}
+book[42]={
+	catalog: "Novel",
+	author: "简爱",
+	ISBN:"978-6-191-10830-8",
+	title: "夏洛蒂·勃朗特",
+	publisher:"外文出版社",
+	issueDate:"2008",
+	number: 3
+}
+book[43]={
+	catalog: "Novel",
+	author: "露西·M·蒙哥马利",
+	ISBN:"978-6-101-08530-8",
+	title: "绿山墙的安妮:ANNE OF GREEN GABLES",
+	publisher:"天津人民出版社",
+	issueDate:"2015",
+	number: 4
+}
+book[44]={
+	catalog: "Novel",
+	author: "乔治·奥威尔",
+	ISBN:"978-6-101-12630-8",
+	title: "一九八四",
+	publisher:"辽宁人民出版社",
+	issueDate:"2013",
+	number: 2
+}
+book[45]={
+	catalog: "Novel",
+	author: "欧·亨利",
+	ISBN:"978-6-101-19844-8",
+	title: "THE VOICE OF THE CITY",
+	publisher:"天津人民出版社",
+	issueDate:"2015",
+	number: 9
+}
+book[46]={
+	catalog: "History",
+	author: "Colson Whitehead ",
+	ISBN:"978-4-101-30830-8",
+	title: "地下铁道",
+	publisher:"上海人民出版社",
+	issueDate:"2017",
+	number: 5
+}
+book[47]={
+	catalog: "History",
+	author: "范小玫  ",
+	ISBN:"978-4-101-31130-8",
+	title: "新历史主义视角下的唐·德里罗小说研究",
+	publisher:"厦门大学出版社",
+	issueDate:"2014",
+	number: 5
+}
+book[48]={
+	catalog: "History",
+	author: "Harry N. Abrams",
+	ISBN:"978-4-101-30822-8",
+	title: "The Moon",
+	publisher:"Harry N. Abrams",
+	issueDate:"2017",
+	number: 3
+}
+book[49]={
+	catalog: "History",
+	author: "Alexander Kluge",
+	ISBN:"978-4-101-34330-8",
+	title: "April 1945",
+	publisher:"Seagull Books",
+	issueDate:"2015",
+	number: 5
+}
+book[50]={
+	catalog: "History",
+	author: "GAVIN MENZIES",
+	ISBN:"978-4-101-33800-8",
+	title: "The Year China Discovered the World ",
+	publisher:"BANTAM BOOKS",
+	issueDate:"2003",
+	number: 3
+}
+book[51]={
+	catalog: "Tech",
+	author: "R.R.帕尔默",
+	ISBN:"972-6-101-30130-8",
+	title: "现代世界史",
+	publisher:"世界图书出版公司",
+	issueDate:"2013",
+	number: 5
+}
+book[52]={
+	catalog: "Tech",
+	author: "朱庆育",
+	ISBN:"972-6-101-31130-8",
+	title: "法研教科书:民法总论",
+	publisher:"北京大学出版社",
+	issueDate:"2016",
+	number: 5
+}
+
+book[53]={
+	catalog: "Tech",
+	author: "李保田",
+	ISBN:"972-6-112-30130-8",
+	title: "老课文?共和国教科书",
+	publisher:"广西师范大学出版社",
+	issueDate:"2015",
+	number: 6
+}
+
+book[54]={
+	catalog: "Tech",
+	author: "李雯",
+	ISBN:"972-6-101-13400-8",
+	title: "教科书外的中国历史常识",
+	publisher:"辽海出版社",
+	issueDate:"2015",
+	number: 9
+}
+
+book[55]={
+	catalog: "Tech",
+	author: "梁慧星 ",
+	ISBN:"972-6-136-30130-8",
+	title: "物权法",
+	publisher:"法律出版社",
+	issueDate:"2016",
+	number: 5
+}
+
+
 	var books = [];	
 	for(var i=0;i<book.length;i++)
 		books.push(book[i]);

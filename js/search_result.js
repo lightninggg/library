@@ -27,6 +27,7 @@ var user_idetity_admin = !flag[0].user_cnt;
 	});
 	$('#sort_issue_date').click(function() {
 		required_books.sort(compare('issueDate'));
+		required_books.reverse();
 		localStorage.setItem('required_books',JSON.stringify(required_books));
 		location.reload();
 	});
@@ -70,7 +71,7 @@ var user_idetity_admin = !flag[0].user_cnt;
 
 	if(!user_idetity_admin){
 			if(required_books == null){
-
+				document.getElementById("book_length").innerHTML = "There are "+"<b>"+required_books.length+"</b>"+" results";
 				$('#div-content').append("<table class=\"table table-hover\" id=\"table-content\" ></table>");
 		
 				$('#table-content').append("<tbody id=\"tbody-content\"></tbody>");
@@ -101,6 +102,7 @@ var user_idetity_admin = !flag[0].user_cnt;
 					localStorage.setItem('required_books',JSON.stringify(required_books));
 			}
 			else if(required_books.length>0){
+				document.getElementById("book_length").innerHTML = "There are "+"<b>"+required_books.length+"</b>"+" results";
 				$('#div-content').append("<center><table class=\"table table-hover\" id=\"reader_table-content\" ></table><center>");
 		
 				$('#reader_table-content').append("<tbody id=\"tbody-content\"></tbody>");
@@ -167,6 +169,7 @@ var user_idetity_admin = !flag[0].user_cnt;
 	}
 
 	$('.book_name_href').click(function(){
+		$('#book_length').hide();
 		var book_name = $(this).text();
 		var book_name_index = books.findIndex(x=>x.title == book_name);
 		var current_book = books[book_name_index];

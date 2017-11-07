@@ -51,7 +51,7 @@
 					+"<button class=\"btn-danger del_user\"><span class=\"glyphicon glyphicon-trash\"></span></button>";
 					$u_info = $u_info+i+"."+"<span class=\"current_user_name\">"+users[i].name+"</span>"+"</td></tr>";
 					for(var j=0;j<users[i].borrow_books.length;j++){
-						if(!j)$u_info = $u_info+"<tr><td><b>Borrowed books:</b></td><td><b>Latest return date:</b></td></tr>";
+						if(!j)$u_info = $u_info+"<tr><td><b>Borrowed books:</b></td><td><b>&nbsp;&nbsp;Due date:</b>&nbsp;</td></tr>";
 						$u_info = $u_info + "<tr>";
 						$u_info = $u_info +"<td>";
 						$u_info = $u_info + users[i].borrow_books[j].title;
@@ -160,7 +160,7 @@
 				else{
 					$borrowList = $("<table class=\"table table-hover\" id=\"table-content\" ></table>");
 					$('#content').append($borrowList);
-					$('#table-content').append("<tr id=\"t-head\"><td></td><td>Name</td><td>Catalog</td><td>&nbsp;&nbsp;Latest&nbsp;Return&nbsp;Date</td></tr>");
+					$('#table-content').append("<tr id=\"t-head\"><td></td><td>Name</td><td>Catalog</td><td>&nbsp;&nbsp;Due&nbsp;Date&nbsp;</td></tr>");
 					$('#table-content').append("<tbody id=\"tbody-content\"></tbody>");
 					
 
@@ -171,7 +171,7 @@
 							book_i_borrowDate.setMonth(book_i_borrowDate.getMonth()+1);
 							borrowed_books[i].returnDate=book_i_borrowDate.getFullYear()+"-"+(book_i_borrowDate.getMonth()+1)+"-"+book_i_borrowDate.getDate();
 							}
-						$main_table_content = "<tr class=\"borrow_tr\"><td><button class = \"btn_return btn-warning\" >Return</button>&nbsp;&nbsp;<button class = \"btn_renew btn-default\">Renew</button></td>"+"<td>"+borrowed_books[i].title+"</td>"+"<td>"+borrowed_books[i].catalog+"</td>"+"<td>"+borrowed_books[i].returnDate+"</td>"+"</tr>";
+						$main_table_content = "<tr class=\"borrow_tr\"><td><button class = \"btn_return btn-warning\" >Return</button><button class = \"btn_renew btn-default\">Renew</button></td>"+"<td>"+borrowed_books[i].title+"</td>"+"<td>"+borrowed_books[i].catalog+"</td>"+"<td>"+borrowed_books[i].returnDate+"</td>"+"</tr>";
 					$('#tbody-content').append($main_table_content);
 				}
 
