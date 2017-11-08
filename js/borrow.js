@@ -3,6 +3,7 @@ var users = JSON.parse(localStorage.getItem('users'));
 var flag = JSON.parse(localStorage.getItem('flag'));
 var required_books = JSON.parse(localStorage.getItem('required_books'));
 var current_user = users[flag[0].user_cnt];
+var user_idetity_admin = !flag[0].user_cnt;
 if(localStorage.getItem('deleted_books') == null){
 	var deleted_books = [];
 	localStorage.setItem('deleted_books',JSON.stringify(deleted_books));
@@ -57,6 +58,36 @@ var deleted_books = JSON.parse(localStorage.getItem('deleted_books'));
 	}
 
 })*/
+		if(!user_idetity_admin){
+			for(let i=0;i<users[flag[0].user_cnt].borrow_books.length;i++){
+						var u_date = new Date(users[flag[0].user_cnt].borrow_books[i].returnDate);
+						var day = parseInt(parseInt(new Date() - u_date) / 1000 / 60/60/24);
+						if(day>0){
+							users[flag[0].user_cnt].borrow_books[i].cost = day*0.1;
+						}
+						else{
+							users[flag[0].user_cnt].borrow_books[i].cost = 0;
+						}
+				}
+					localStorage.setItem('users',JSON.stringify(users));
+				var t = 0;
+				(function(){
+					for(let i =0;i<users[flag[0].user_cnt].borrow_books.length;i++)
+					{	if(users[flag[0].user_cnt].borrow_books[i].cost){
+							alert("Please pay the bill fist !");
+							t = 1;
+							break;
+						}
+					}
+				})();
+					if(t)	
+					{
+						
+						window.location.href="payment.html";
+					}
+		}
+
+
 
 $('.reader').click(function(){
 	if(flag[0].user_flag){
@@ -91,11 +122,12 @@ $('.reader').click(function(){
 				}
 				// var req_book = required_books.find(get_bookName);
 				var req_book_index = required_books.findIndex(x=>x.title==bookName);
+				var date = new Date();
 				required_books[req_book_index].number--;
 
 				books[i].number--;
 				current_user.borrow_books[borrowed_times] = books[i];
-				current_user.borrow_books[borrowed_times].borrowDate = new Date();
+				current_user.borrow_books[borrowed_times].borrowDate = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
 				current_user.borrow_cnt--;
 				current_user.borrow_books[borrowed_times].renewChance = 1;
 				alert('Borrow successfully !!');

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>payment</title>
+	<link rel="icon" href="./ico/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/user_page_style.css">
+    <link rel="stylesheet" href="http://www.ruanyifeng.com/styles.css" type="text/css" />
+	<script type="text/javascript" src="http://www.ruanyifeng.com/mt.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/user.css">
+    <style type="text/css">
+    	.btn_back{
+    		font-size: 4rem;
+    	}
+		table{
+			width: 750px!important;
+		}
+    </style>
+</head>
+<body class="one-column">
+	  <div class="navbar navbar-default navbar-fixed-top">
+				  <div class="nav_content">
+				   <div class="navbar-header">
+				     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				       <span class="icon-bar"></span>
+				       <span class="icon-bar"></span>
+				       <span class="icon-bar"></span> 
+				     </button> 
+				   </div>
+				   <div class="collapse navbar-collapse" id="myNavbar">
+				     <ul class="nav navbar-nav navbar-right">
+				        <li><a href="index.html">Home</a></li>
+				        <li><a href="attention.html">Attention</a></li>
+				        <li><a href="books.html">Library</a></li>
+				        <li><a id="nav_login" href="login.html" style="color:#3067E5!important;">Login</a></li>
+				        <li><a id="nav_logout" href="#" style="display: none;float: right;color:#3067E5!important;">Logout</a></li>
+				      </ul>
+				    </div>
+				  </div>
+				</div>
+		
+	<div id="head"></div>
+	<div class="header clearfix"></div>
+	<div id="container_payment"></div>
+	<div class="btn_back">
+		<center>
+			<br>
+			<a href="user.html"><button class="btn-primary"><span class="btn-primary glyphicon glyphicon-arrow-left"></span>Back</button></a>
+		</center>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/user_head.js"></script>
+ 	<!-- <script type="text/javascript" src="js/user_page.js"></script> -->
+ 	<script type="text/javascript">
+ 		
+ 		var users = JSON.parse(localStorage.getItem('users'));
+ 		var flag = JSON.parse(localStorage.getItem('flag'));
+ 		var date = new Date();
+ 		$('#nav_logout').click(function(){
+				flag[0].user_flag = 0;
+				flag[0].user_cnt = -1;
+				 localStorage.setItem('flag',JSON.stringify(flag));
+				 location.reload();
+			});
+ 		if(flag[0].user_flag){
+ 			$('#nav_login').hide();
+ 			$('#nav_logout').show();
+ 		}
+ 		else{
+ 			$('#nav_logout').hide();
+ 			$('#nav_login').show();
+ 		} 
+ 		$borrowList = $("<table class=\"table table-hover\" id=\"table-content\" ></table>");
+					$('#container_payment').append($borrowList);
+					$('#table-content').append("<tr id=\"t-head\"><td></td><td>Name</td><td>&nbsp;&nbsp;Due&nbsp;Date&nbsp;</td><td>Bills</td></tr>");
+					$('#table-content').append("<tbody id=\"tbody-content\"></tbody>");
+					
+
+					for(let i=0;i<users[flag[0].user_cnt].borrow_books.length;i++)
+					{
+						$main_table_content = "<tr class=\"borrow_tr\"><td><button class = \"btn_pay btn-warning\" >Pay</button>"+"<td>"+users[flag[0].user_cnt].borrow_books[i].title+"</td>"+"<td>"+users[flag[0].user_cnt].borrow_books[i].returnDate+"</td>"
+							+"<td>"+users[flag[0].user_cnt].borrow_books[i].cost.toFixed(2)+"</td>"+"</tr>";
+					$('#tbody-content').append($main_table_content);
+				}
+				$('.btn_pay').click(function(){
+					var book_title = $(this).parent().next().text();
+					var i = users[flag[0].user_cnt].borrow_books.findIndex(x=>x.title == book_title);
+					if(!users[flag[0].user_cnt].borrow_books[i].cost){
+						alert("U dont need to pay any bills !");
+						return false;
+					}
+					var secret = prompt('请输入银行卡密码',"");
+					if(secret == "1234567"){
+						alert("支付成功！");
+						users[flag[0].user_cnt].borrow_books[i].cost = 0;
+						users[flag[0].user_cnt].borrow_books[i].borrowDate =date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate();
+						users[flag[0].user_cnt].borrow_books[i].returnDate = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();
+						localStorage.setItem('users',JSON.stringify(users));
+						location.reload();
+					}
+					else{
+						alert("密码错误!");
+					}
+				})
+ 	</script>
+</body>
+</html>
