@@ -514,6 +514,85 @@ book[55]={
 	number: 5
 }
 
+book[56]={
+	catalog: "Science",
+	author: "Adam Hart-Davis ",
+	ISBN:"978-2-212-18930-9",
+	title: "Science 精装",
+	publisher:"DK",
+	issueDate:"2016",
+	number: 5
+}
+
+book[57]={
+	catalog: "Science",
+	author: "Thomas Henry Huxley",
+	ISBN:"978-2-212-60350-8",
+	title: "Science & Education",
+	publisher:"BiblioLife",
+	issueDate:"2012",
+	number: 3
+}
+
+
+book[58]={
+	catalog: "Science",
+	author: "韦恩 艾弗里特 ",
+	ISBN:"978-2-212-16330-9",
+	title: "Smart Science:跟美国学生同步学科学",
+	publisher:"天津人民出版社",
+	issueDate:"2017",
+	number: 3
+}
+
+
+book[59]={ 
+	catalog: "Science",
+	author: "文森特 默奇",
+	ISBN:"978-2-232-18930-9",
+	title: "科学读本",
+	publisher:" 天津人民出版社",
+	issueDate:"2013",
+	number: 6
+}
+
+
+book[60]={
+	catalog: "Science",
+	author: "William F. Bynum",
+	ISBN:"978-2-112-18930-9",
+	title: "A Little History of Science",
+	publisher:"Yale University Press",
+	issueDate:"2013",
+	number: 4
+}
+book[61]={
+	catalog: "Science",
+	author: "Hilary Glasman-deal ",
+	ISBN:"978-2-112-14430-9",
+	title: "A Guide for Non-Native Speakers of English",
+	publisher:"Imperial College Press",
+	issueDate:"2009",
+	number: 4
+}
+book[62]={
+	catalog: "Science",
+	author: "Albert-László Barabási",
+	ISBN:"978-2-143-14430-9",
+	title: "Network Science",
+	publisher:"Cambridge University Press",
+	issueDate:"2016",
+	number: 7
+}
+book[63]={
+	catalog: "Science",
+	author: "Brian Christian",
+	ISBN:"978-2-143-14230-6",
+	title: "The Computer Science of Human Decisions",
+	publisher:" William Collins",
+	issueDate:"2017",
+	number: 4
+}
 
 	var books = [];	
 	for(var i=0;i<book.length;i++)
