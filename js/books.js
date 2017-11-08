@@ -466,7 +466,7 @@ book[50]={
 	number: 3
 }
 book[51]={
-	catalog: "Tech",
+	catalog: "History",
 	author: "R.R.帕尔默",
 	ISBN:"972-6-101-30130-8",
 	title: "现代世界史",
@@ -488,14 +488,14 @@ book[53]={
 	catalog: "Tech",
 	author: "李保田",
 	ISBN:"972-6-112-30130-8",
-	title: "老课文?共和国教科书",
+	title: "老课文共和国教科书",
 	publisher:"广西师范大学出版社",
 	issueDate:"2015",
 	number: 6
 }
 
 book[54]={
-	catalog: "Tech",
+	catalog: "History",
 	author: "李雯",
 	ISBN:"972-6-101-13400-8",
 	title: "教科书外的中国历史常识",
@@ -505,10 +505,10 @@ book[54]={
 }
 
 book[55]={
-	catalog: "Tech",
+	catalog: "History",
 	author: "梁慧星 ",
 	ISBN:"972-6-136-30130-8",
-	title: "物权法",
+	title: "历史中的物权法",
 	publisher:"法律出版社",
 	issueDate:"2016",
 	number: 5

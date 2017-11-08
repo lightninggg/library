@@ -29,11 +29,20 @@ $('#signup').click(function(){
 				{
 					var users = JSON.parse(localStorage.getItem('users'));
 
-					users.push(user);
+					var u_index = users.findIndex(x=>x.name == username);
+					if(u_index>=0){
+						alert("This username has alread exsisted !!");
+						$('#sign_form').removeAttr('action');
+						return false;
+					}
+					else{
 
-					localStorage.setItem('users',JSON.stringify(users));
+						users.push(user);
 
-					alert("Sign up successfully!!");
+						localStorage.setItem('users',JSON.stringify(users));
+
+						alert("Sign up successfully !");
+					}
 								
 				}	
 				// e.preventDefault();
