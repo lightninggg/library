@@ -59,33 +59,35 @@ var deleted_books = JSON.parse(localStorage.getItem('deleted_books'));
 
 })*/
 		if(!user_idetity_admin){
-			for(let i=0;i<users[flag[0].user_cnt].borrow_books.length;i++){
-						var u_date = new Date(users[flag[0].user_cnt].borrow_books[i].returnDate);
-						var day = parseInt(parseInt(new Date() - u_date) / 1000 / 60/60/24);
-						if(day>0){
-							users[flag[0].user_cnt].borrow_books[i].cost = day*0.1;
+			if(flag[0].user_flag){
+				for(let i=0;i<users[flag[0].user_cnt].borrow_books.length;i++){
+							var u_date = new Date(users[flag[0].user_cnt].borrow_books[i].returnDate);
+							var day = parseInt(parseInt(new Date() - u_date) / 1000 / 60/60/24);
+							if(day>0){
+								users[flag[0].user_cnt].borrow_books[i].cost = day*0.1;
+							}
+							else{
+								users[flag[0].user_cnt].borrow_books[i].cost = 0;
+							}
+					}
+						localStorage.setItem('users',JSON.stringify(users));
+					var t = 0;
+					(function(){
+						for(let i =0;i<users[flag[0].user_cnt].borrow_books.length;i++)
+						{	if(users[flag[0].user_cnt].borrow_books[i].cost){
+								alert("Please pay the bill fist !");
+								t = 1;
+								break;
+							}
 						}
-						else{
-							users[flag[0].user_cnt].borrow_books[i].cost = 0;
-						}
-				}
-					localStorage.setItem('users',JSON.stringify(users));
-				var t = 0;
-				(function(){
-					for(let i =0;i<users[flag[0].user_cnt].borrow_books.length;i++)
-					{	if(users[flag[0].user_cnt].borrow_books[i].cost){
-							alert("Please pay the bill fist !");
-							t = 1;
-							break;
+					})();
+						if(t)	
+						{
+							
+							window.location.href="payment.html";
 						}
 					}
-				})();
-					if(t)	
-					{
-						
-						window.location.href="payment.html";
-					}
-		}
+			}
 
 
 
