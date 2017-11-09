@@ -72,7 +72,7 @@ var user_idetity_admin = !flag[0].user_cnt;
 	if(!user_idetity_admin){
 			if(required_books == null){
 				document.getElementById("book_length").innerHTML = "There are "+"<b>"+books.length+"</b>"+" results";
-				$('#div-content').append("<table class=\"table table-hover\" id=\"table-content\" ></table>");
+				$('#div-content').append("<center><table class=\"table table-hover\" id=\"table-content\" ></table></center>");
 		
 				$('#table-content').append("<tbody id=\"tbody-content\"></tbody>");
 				required_books = [];
@@ -103,7 +103,7 @@ var user_idetity_admin = !flag[0].user_cnt;
 			}
 			else if(required_books.length>0){
 				document.getElementById("book_length").innerHTML = "There are "+"<b>"+required_books.length+"</b>"+" results";
-				$('#div-content').append("<center><table class=\"table table-hover\" id=\"reader_table-content\" ></table><center>");
+				$('#div-content').append("<center><table class=\"table table-hover\" id=\"reader_table-content\" ></table></center>");
 		
 				$('#reader_table-content').append("<tbody id=\"tbody-content\"></tbody>");
 				for(var i=0;i<required_books.length;i++){
