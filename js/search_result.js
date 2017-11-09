@@ -71,7 +71,7 @@ var user_idetity_admin = !flag[0].user_cnt;
 
 	if(!user_idetity_admin){
 			if(required_books == null){
-				document.getElementById("book_length").innerHTML = "There are "+"<b>"+required_books.length+"</b>"+" results";
+				document.getElementById("book_length").innerHTML = "There are "+"<b>"+books.length+"</b>"+" results";
 				$('#div-content').append("<table class=\"table table-hover\" id=\"table-content\" ></table>");
 		
 				$('#table-content').append("<tbody id=\"tbody-content\"></tbody>");
